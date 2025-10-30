@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 Charts Dashboard | Appliance Energy AU</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- D3.js CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>D3 Charts Dashboard</h1>
+        <h2>TV Power Consumption</h2>
+    </header>
+    <main>
+        <section class="intro">
+            <p>
+                Explore the energy consumption patterns of TVs in Australia. The charts below provide insights into power usage, price trends, and technology breakdowns.
+            </p>
+        </section>
+        <section class="charts-grid">
+            <div class="chart-card">
+                <h3>Scatter Plot: Power vs. Screen Size</h3>
+                <div id="chart1"></div>
+            </div>
+            <div class="chart-card">
+                <h3>Line Chart: Price Trends</h3>
+                <div id="chart2"></div>
+            </div>
+            <div class="chart-card">
+                <h3>Bar Chart: Average Power by Technology</h3>
+                <div id="chart3"></div>
+            </div>
+            <div class="chart-card">
+                <h3>Donut Chart: Technology Share</h3>
+                <div id="chart4"></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Appliance Energy AU</p>
+    </footer>
+    <!-- Chart scripts -->
+    <script src="chart1.js"></script>
+    <script src="chart2.js"></script>
+    <script src="chart3.js"></script>
+    <script src="chart4.js"></script>
+</body>
+</html>

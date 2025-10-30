@@ -1,0 +1,169 @@
+/* ...existing code... */
+
+/* Theme variables */
+:root{
+  --accent-green: #2e9e4e;
+  --muted: #f4f6f7;
+  --card-bg: #ffffff;
+  --text: #222;
+  --muted-text: #666;
+  --shadow: 0 6px 18px rgba(28,40,51,0.08);
+  --radius: 10px;
+  --gap: 20px;
+  font-size: 16px;
+}
+
+/* Reset / base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:var(--text);
+  background: linear-gradient(#ffffff, #fbfcfd);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Page layout */
+header{
+  background: var(--accent-green);
+  color: #fff;
+  padding: 28px 16px;
+  text-align: center;
+  box-shadow: inset 0 -3px rgba(0,0,0,0.06);
+}
+header h1{
+  margin:0;
+  font-size:1.6rem;
+  letter-spacing:0.6px;
+  font-weight:700;
+}
+header h2{
+  margin:8px 0 0;
+  font-size:0.95rem;
+  font-weight:600;
+  opacity:0.95;
+}
+
+/* Main container */
+main{
+  max-width:1100px;
+  margin: 22px auto;
+  padding: 0 16px 40px;
+}
+
+/* Intro text */
+.intro{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  color: var(--muted-text);
+  box-shadow: var(--shadow);
+  line-height:1.45;
+}
+
+/* Charts grid */
+.charts-grid{
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+
+/* Two-column layout on medium+ screens, 2x2 on wide */
+@media (min-width:700px){
+  .charts-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (min-width:1100px){
+  .charts-grid{ grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+}
+
+/* Individual chart card */
+.chart-card{
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-height: 220px;
+}
+
+/* Chart titles */
+.chart-card h3{
+  margin:0;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--text);
+}
+
+/* Chart container — ensure svg fills width */
+.chart-card > div{
+  width:100%;
+  /* height will be set by the scripts (they calculate based on container width) */
+  position: relative;
+  min-height:160px;
+}
+
+/* Make any appended SVG responsive if scripts use viewBox */
+.chart-card svg{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+
+/* Footer */
+footer{
+  background: linear-gradient(#f0f0f0, #ecf3ee);
+  padding: 10px 16px;
+  text-align:center;
+  font-size:0.9rem;
+  color:var(--muted-text);
+  border-top: 3px solid var(--accent-green);
+  margin-top: 18px;
+}
+
+/* Tooltip used by charts */
+.tooltip{
+  position: absolute;
+  pointer-events: none;
+  background: #ffffff;
+  border: 1px solid rgba(20,20,20,0.08);
+  box-shadow: 0 6px 20px rgba(16,24,40,0.08);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height:1.2;
+  z-index: 30;
+  transform: translate(6px, -6px);
+  white-space: nowrap;
+}
+
+/* Legend styles */
+.legend text{ font-size:0.9rem; fill: var(--text); }
+.legend rect{ stroke: rgba(0,0,0,0.04); }
+
+/* Small helper classes */
+.kv{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  color:var(--muted-text);
+  font-size:0.9rem;
+}
+
+/* Accessible focus styles for interactive elements (if any) */
+svg :focus, .chart-card :focus { outline: 3px solid rgba(46,158,78,0.18); outline-offset:3px; }
+
+/* Mobile spacing tweak */
+@media (max-width:420px){
+  header{ padding:20px 8px; }
+  header h1{ font-size:1.25rem; }
+  .chart-card{ padding:10px; }
+  .intro{ padding:10px; font-size:0.95rem; }
+}
+
+/* ...existing code... */
